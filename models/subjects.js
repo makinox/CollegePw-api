@@ -2,11 +2,11 @@
 
 const request = require('superagent')
 const conect = require('../config')
-const userModel = {}
+const subjectsModel = {}
 
-userModel.getUsers = async (callback) => {
+subjectsModel.getSubjects = async (callback) => {
   request
-    .get(`http://${conect.host}/users`)
+    .get(`http://${conect.host}/subjects`)
     .end(function (err, res) {
       if (err) {
         console.log(`Ha ocorrido el siguiente error: ${err.message}`)
@@ -17,35 +17,22 @@ userModel.getUsers = async (callback) => {
     })
 }
 
-userModel.getUser = async (id, callback) => {
+subjectsModel.getSubject = async (id, callback) => {
   request
-    .get(`http://${conect.host}/users/${id}`)
+    .get(`http://${conect.host}/subjects/${id}`)
     .end(function (err, res) {
       if (err) {
         console.log(`Ha ocorrido el siguiente error: ${err.message}`)
-        callback(null, { error: `Ha ocorrido el siguiente error: ${err.message}` })
+        // callback(null, { error: `Ha ocorrido el siguiente error: ${err.message}` })
       } else {
         callback(null, res.body)
       }
     })
 }
 
-userModel.getUser = async (id, callback) => {
+subjectsModel.updateSubject = async (userData, callback) => {
   request
-    .get(`http://${conect.host}/users/${id}`)
-    .end(function (err, res) {
-      if (err) {
-        console.log(`Ha ocorrido el siguiente error: ${err.message}`)
-        callback(null, { error: `Ha ocorrido el siguiente error: ${err.message}` })
-      } else {
-        callback(null, res.body)
-      }
-    })
-}
-
-userModel.updateUser = async (userData, callback) => {
-  request
-    .put(`http://${conect.host}/users/${userData.usuario}`)
+    .put(`http://${conect.host}/subjects/${userData.usuario}`)
     .send(userData)
     .end(function (err, res) {
       if (err) {
@@ -57,9 +44,9 @@ userModel.updateUser = async (userData, callback) => {
     })
 }
 
-userModel.insertUser = async (userData, callback) => {
+subjectsModel.insertSubject = async (userData, callback) => {
   request
-    .post(`http://${conect.host}/users/`)
+    .post(`http://${conect.host}/subjects/`)
     .send(userData)
     .end(function (err, res) {
       if (err) {
@@ -71,9 +58,9 @@ userModel.insertUser = async (userData, callback) => {
     })
 }
 
-userModel.deleteUser = async (id, callback) => {
+subjectsModel.deleteSubject = async (id, callback) => {
   request
-    .delete(`http://${conect.host}/users/${id}`)
+    .delete(`http://${conect.host}/subjects/${id}`)
     .end(function (err, res) {
       if (err) {
         console.log(`Ha ocorrido el siguiente error: ${err.message}`)
@@ -83,4 +70,5 @@ userModel.deleteUser = async (id, callback) => {
       }
     })
 }
-module.exports = userModel
+
+module.exports = subjectsModel
