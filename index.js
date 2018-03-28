@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({type: 'application/x-www-form-urlencoded', extended: true}))
 
 // Rutas
-// require('./routes/index')(app)
+require('./routes/index')(app)
 // require('./routes/auth')(app)
 require('./routes/users')(app)
 require('./routes/subjects')(app)
