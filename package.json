@@ -1,0 +1,29 @@
+{
+  "name": "collegepw-api",
+  "version": "1.0.0",
+  "description": "Collegepw api web socket",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.2",
+    "standard": "^11.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "lint": "standard",
+    "start": "npm run lint && nodemon ./index.js",
+    "test": "text api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makinox/Collegepw-api.git"
+  },
+  "author": "Jesus bossa <jesusbossa@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makinox/Collegepw-api/issues"
+  },
+  "homepage": "https://github.com/makinox/Collegepw-api#readme"
+}
