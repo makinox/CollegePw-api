@@ -30,7 +30,7 @@ module.exports = async function (app) {
     })
   })
 
-    // Obtener una sola materia dando  el usuario
+  // Obtener una sola materia dando  el usuario
   await app.get('/est/:as', async (req, res) => {
     await St.getOest(req.params.as, async (err, data) => {
       if (data.error || err) {
@@ -68,7 +68,7 @@ module.exports = async function (app) {
       }
     })
   })
-    // Insertando todas las estadisticas
+  // Insertando todas las estadisticas
   await app.post('/stats', async (req, res) => {
     const userData = {
       usuario: req.body.usuario,
@@ -92,7 +92,7 @@ module.exports = async function (app) {
       }
     })
   })
-    // Borrar usuarios
+  // Borrar usuarios
   await app.delete('/stats/:id&:as', async (req, res) => {
     await St.deleteStat(req.params.id, req.params.as, async (err, data) => {
       if (data.error || err) {

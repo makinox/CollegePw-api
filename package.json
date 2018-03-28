@@ -6,13 +6,15 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "jquery": "^3.3.1",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.2",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "superagent": "^3.8.2"
   },
   "devDependencies": {},
   "scripts": {
-    "lint": "standard",
+    "lint": "standard --fix",
     "start": "npm run lint && nodemon ./index.js",
     "test": "text api"
   },
